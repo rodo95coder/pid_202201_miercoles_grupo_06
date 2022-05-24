@@ -1,0 +1,66 @@
+
+
+<div>
+
+    <form class="content" id="miform" (ngSubmit)=" insertaDepartamento()" novalidate >
+    <div class="submit-form" >
+  
+         <div class="row">
+            <div class="col-lg-12">
+                <h6>Registro de Deparamento </h6>
+            </div>
+        </div>
+  
+        <div class="row" style="margin-top: 3%">
+                <div class="col-lg-3" >
+                    <label for="nombre">Nombre de Deparamento</label>
+                    <input type="text" class="form-control" name="nombre" id="validationDefault01" [(ngModel)]="departamento.nombre" />
+                    <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                </div >
+            
+                <div class="col-lg-3">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="descripcion"  [(ngModel)]="departamento.descripcion"   />
+                </div>
+
+                <div class="col-lg-3">
+                    <label for="precio">Precio</label>
+                    <input type="precio" class="form-control" name="precio" id="precio" [(ngModel)]="departamento.precio"    />
+                </div>
+
+                <div class="col-lg-4">
+                    <label for="edificio">Edificio</label>
+                    <select  id="edificio" name="edificio" class="form-control"  [(ngModel)]="departamento.edificio!.idedificio" >
+                        <option value="-1"> [Seleccione] </option>
+                        <option *ngFor="let aux of edificios" value="{{aux.idedificio }}" >
+                            {{aux.nombre}}
+                        </option>    
+                        
+                       
+                    </select>
+                </div>  
+                <div class="col-lg-3">
+                    <label for="fechaVigencia">Fecha Terminada</label>
+                    <input type="date" class="form-control" name="fechaVigencia" id="fechaVigencia"   [(ngModel)]="departamento.fechaVigencia"    />
+                </div>
+         </div>    
+  
+        <div class="row" style="margin-top: 3%"> 
+                <div class="col-lg-12">
+                    <button class="btn btn-success" type="submit" >Enviar</button>     
+                </div>
+        </div>
+        
+        <div class="row" style="margin-top: 3%"> 
+            <div class="col-lg-12">
+                <button class="btn btn-success" type="reset"  >Limpiar</button>     
+            </div>
+    </div>
+    
+      </div> 
+     </form> 
+    </div>
+
+    
